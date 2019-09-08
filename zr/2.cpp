@@ -2,22 +2,9 @@
 #include <tchar.h>  
 #include <stdio.h>
 #include <stdlib.h>
-#include <direct.h>
-#include <string.h>
 
 int main() {
-	char path[_MAX_PATH];
-	_getcwd(path, _MAX_PATH);
-	//printf("路径为:\n%s\n", path);
-	const char* dl = "\\skin.dll";
-	const size_t len = strlen(path) + strlen(dl);
-	char* n_str = new char[len + 1];
-	strcpy_s(n_str, len +1, path);
-	strcat_s(n_str, len + 1,dl);
-	printf("路径为:\n%s\n", n_str);
-
-	//system("PAUSE");
-	const char* pf = n_str; //"D:\\C\\zr\\Debug\\skin.dll"
+	const char* pf = "D:\\C\\zr\\Debug\\skin.dll";
 	int nlen = strlen(pf) + 1;
 	int nwlen = MultiByteToWideChar(CP_ACP, 0, pf, nlen, NULL, 0);
 	TCHAR lpszfile[256];
